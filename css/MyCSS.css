@@ -1,0 +1,235 @@
+/*Leon Vong's CSS*/
+
+p {
+  font-size: 14px;
+  color:#777272;
+  line-height: 21px;
+}
+
+h1 {
+  font-size: 40px;
+  color:#8483B2;
+  text-shadow:2px 2px #0D0C40;
+  line-height: 48px;
+  display: block;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 24px;
+  text-shadow:2px 2px #864863;
+  line-height: 29px;
+  padding: 10px;
+}
+
+h3 {
+  font-style: italic;
+  font-size: 20px;
+  text-shadow:2px 2px #864863;
+  line-height: 22px;
+  padding:12px;
+}
+
+h4 {
+  font-weight: bold;
+  font-size: 14px;
+  text-shadow:2px 2px #864863;
+  line-height: 17px;
+  padding:15px;
+}
+
+h2, h3, h4, h5 {
+  padding:20px;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+#header{
+	background-color: #393778;
+	text-align: center;
+}
+
+#header .welcome-message {
+  color: #8483B2;
+}
+
+#header #skillsH3 {
+  color: #8483B2;
+  text-shadow:2px 2px #0D0C40;
+}
+
+#workExperience{
+	background-color: #AC8A3F;
+	text-align: center;
+}
+
+#workExperience h2{
+	color: #FFE6B0;
+  text-shadow:2px 2px #5B4005;
+}
+
+#workExperience .date-text{
+	float: right;
+	color: #D4B470;
+}
+
+#workExperience a{
+	color: #86651E;
+}
+
+#workExperience p{
+	color: #FFE6B0;
+  text-shadow:2px 2px #5B4005;
+}
+
+#projects{
+	background-color: #334374;
+	text-align: center;
+}
+
+#projects h2{
+	color: #7D89AC;
+	text-shadow:2px 2px #0A173E;
+}
+
+#projects .date-text{
+	float: right;
+	color: #53628F;
+}
+
+#projects a{
+	color: #1C2C5B;
+}
+
+#projects p{
+	color: #7D89AC;
+	text-shadow:2px 2px #0A173E;
+}
+
+#education{
+	background-color: #AC983F;
+	text-align: center;
+}
+
+#education h2{
+	color: #FFF1B0;
+	text-shadow:2px 2px #5B4B05;
+}
+
+#education .location-text{
+	float: right;
+	color: #D4C270;
+}
+
+#education a{
+	color: #86731E;
+}
+
+#education .education-entry{
+	color: #FFF1B0;
+}
+
+#mapDiv{
+	background-color: #2F4C71;
+	text-align: center;
+	padding-bottom: 10%;
+}
+
+#mapDiv h2{
+	color: #788DA7;
+	text-shadow:2px 2px #081F3C;
+}
+
+#letsConnect{
+	background-color: #393778;
+	padding-bottom: 2%;
+}
+
+#letsConnect h2{
+  color:#6D9E99;
+  text-shadow:2px 2px #033933;
+	background-color: #276B64;
+}
+
+hr{
+	margin-top: 10px;
+}
+
+.education-entry, .work-entry, .project-entry {
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+#menu
+{
+	position:			fixed;
+	right:				-200px;
+	width:				270px;
+	font-size:			30px;
+	text-shadow:		1px 1px 1px black;
+	border-top:			1px solid rgba(0,0,0,1);
+	border-bottom:		1px solid rgba(0,0,0,1);
+	background:			rgba(55,55,55,1);
+	z-index: 			1;
+	overflow-y:			hidden;
+	overflow-x:			hidden;
+    -webkit-transition: all 400ms ease;
+    -moz-transition: all 400ms ease;
+    -ms-transition: all 400ms ease;
+    -o-transition: all 400ms ease;
+    transition: all 400ms ease;
+}
+#menu:hover
+{
+	right:				0px;
+    -webkit-box-shadow: -1px 3px 5px 0px rgba(50,50,50,0.75);
+    -moz-box-shadow: -1px 3px 5px 0px rgba(50,50,50,0.75);
+    box-shadow: -1px 3px 5px 0px rgba(50,50,50,0.75);
+}
+
+#menu .MenuBar li
+{
+	list-style: 		none;
+	height:				auto;
+	position:			relative;
+	margin-bottom:5px;
+	padding:5px;
+}
+
+#menu .MenuBar img
+{
+	width:			20%;
+	height:			auto;
+	display:		inline-block;
+	vertical-align:	middle;
+	overflow:		hidden;
+	opacity:		0.5;
+	border:			1px solid #000;
+}
+
+#menu .MenuBar li:hover
+{
+	cursor: 			default;
+}
+
+#menu .MenuBar li a
+{
+	display:			block;
+	color:				#cccccc;
+	text-decoration:	none;
+	width:				65%;
+	float:				right;
+	margin-top:			0px;
+}
+
+#menu .MenuBar li a:hover
+{
+	cursor:				pointer;
+	color:				#864863;
+}
+
+@media only screen and (max-width: 1200px) {
+  #menu {
+    display: none;
+  }
+}
