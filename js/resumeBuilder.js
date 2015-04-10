@@ -5,24 +5,26 @@ var bio = {
 	"contacts"	: {
 		"email" : "bpleonvong@gmail.com",
 		"github": "BPLeonVong",
-		"twitter":"@BPLeonVong",
-		"location":"Cambridge, ON, CA"
+		"twitter": "@BPLeonVong",
+		"location": "Cambridge, ON, CA",
+		"mobile": "2-222-222-2222"
 	},
-	"welcome"	: "Hello, my name is Leon Vong and I am an aspiring programmer in development. I am looking for a career to kickstart my life in a programming related field but little luck in doing so. Hopefully this Udacity course may help myself in doing so. The information displayed is a mix between real and fake data, please do not take the content to serious and grade upon the code completion. Thank you for visiting.",
+	"welcomeMessage"	: "Hello, my name is Leon Vong and I am an aspiring programmer in development. I am looking for a career to kickstart my life in a programming related field but little luck in doing so. Hopefully this Udacity course may help myself in doing so. The information displayed is a mix between real and fake data, please do not take the content to serious and grade upon the code completion. Thank you for visiting.",
 	"skills"	: [
 		"C++","C","C#","Unity","AS3","Lua"
 	],
-	"bioPic"	: "Images/Ethel.png"
+	"biopic"	: "Images/Ethel.png"
 };
 //Bio Display Function
 bio.display = function(){
 	var formattedName = HTMLheaderName.replace("%data%",bio.name);
 	var formattedRole = HTMLheaderRole.replace("%data%",bio.role);
-	var formattedWelcome = HTMLwelcomeMsg.replace("%data%",bio.welcome);
-	var formattedHTMLemail = HTMLemail.replace("%data%",bio.contacts.email);
+	var formattedWelcome = HTMLwelcomeMsg.replace("%data%",bio.welcomeMessage);
+	var formattedEmail = HTMLemail.replace("%data%",bio.contacts.email);
 	var formattedGithub = HTMLgithub.replace("%data%",bio.contacts.github);
 	var formattedTwitter = HTMLtwitter.replace("%data%",bio.contacts.twitter);
-	var formattedPicture = HTMLbioPic.replace("%data%",bio.bioPic);
+	var formattedNumber = HTMLmobile.replace("%data%",bio.contacts.mobile);
+	var formattedPicture = HTMLbioPic.replace("%data%",bio.biopic);
 
 	$("#header").prepend(formattedRole);
 	$("#header").prepend(formattedName);
@@ -30,13 +32,14 @@ bio.display = function(){
 	$("#header").append(formattedPicture);
 	$("#topContacts").append(formattedTwitter);
 	$("#topContacts").append(formattedGithub);
-	$("#topContacts").append(formattedHTMLemail);
+	$("#topContacts").append(formattedEmail);
+	$("#topContacts").append(formattedNumber);
 	$("#footerContacts").append(formattedTwitter);
 	$("#footerContacts").append(formattedGithub);
-	$("#footerContacts").append(formattedHTMLemail);
+	$("#footerContacts").append(formattedEmail);
+	$("#footerContacts").append(formattedNumber);
 	
-	//I would like to add the menu options dynamically but was having trouble doing so, because of the scroll() function.
-	//$(".MenuBar").append('<li><img src="Images/Ethel.png"></img><a href="#" onclick="Scroll("#header");return false;">About</a></li>');
+	$(".MenuBar").append('<li><img src="Images/aboutIcon.png"></img><a href="#header">About</a></li>');
 	
 	if(bio.skills.length>0){
 		$("#header").append(HTMLskillsStart);
@@ -53,19 +56,22 @@ var work = {
 			"employer":"Self-Employed",
 			"title":"Self-proclaimed Programmer, NEET",
 			"dates":"June 30th - Current",
-			"description":"Program an amount of code using various languages and scripts, learn and integrate new methods and continue too further educational studies."
+			"description":"Program an amount of code using various languages and scripts, learn and integrate new methods and continue too further educational studies.",
+			"location":"Cambridge, ON."
 		},
 		{
 			"employer":"Cambridge Hotels and Conference Centre",
 			"title":"Line Cook",
 			"dates":"March 2011 - July 2014",
-			"description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+			"description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+			"location":"Cambridge, ON."
 		},
 		{
 			"employer":"RCC Institute and Technology",
 			"title":"Tutor",
 			"dates":"December 2012 - August 2013",
-			"description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+			"description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+			"location":"Cambridge, ON."
 		}
 	]
 };
@@ -78,10 +84,13 @@ work.display = function(){
 		var formattedEmployerTitle = formattedEmployer + formattedTitle;
 		var formattedDates = HTMLworkDates.replace("%data%",work.jobs[job].dates);
 		var formattedDescription = HTMLworkDescription.replace("%data%",work.jobs[job].description);
+		var formattedLocation = HTMLworkLocation.replace("%data%",work.jobs[job].location);
 		$(".work-entry:last").append(formattedEmployerTitle);
 		$(".work-entry:last").append(formattedDates);
 		$(".work-entry:last").append(formattedDescription);
+		$(".work-entry:last").append(formattedLocation);
 	}
+	$(".MenuBar").append('<li><img src="Images/workIcon.png"></img><a href="#workExperience">Work Experience</a></li>');
 }
 //Projects Info
 var projects = {
@@ -116,13 +125,12 @@ projects.display = function(){
 	$(".project-entry:last").append(formattedTitle);
 	$(".project-entry:last").append(formattedDates);
 	$(".project-entry:last").append(formattedDescription);
-		if(projects.projects[project].images.length>0){
-			for(var i = 0; i<projects.projects[project].images.length; ++i){
-				var formattedImage = HTMLprojectImage.replace("%data%",projects.projects[project].images[i]);
-				$(".project-entry:last").append(formattedImage);
-			}
+		for(var i = 0; i<projects.projects[project].images.length; ++i){
+			var formattedImage = HTMLprojectImage.replace("%data%",projects.projects[project].images[i]);
+			$(".project-entry:last").append(formattedImage);
 		}
 	}
+	$(".MenuBar").append('<li><img src="Images/projectIcon.png"></img><a href="#projects">Projects</a></li>');
 }
 //Education Info
 var education = {
@@ -131,11 +139,19 @@ var education = {
             "name": "RCC Institute and Technology",
             "location": "Toronto, ON, CA",
             "degree": "Diploma",
-            "major": [
+			"date":"2011-2013",
+            "majors": [
                 "Programming"
-            ]
+            ],
+			"url":"www.tempwebsite.com"
         }
-    ]
+    ],
+	"onlineCourses": [{
+		"title" : "Front-End Web Developer Nanodegree",
+		"school" : "Udacity",
+		"dates" : "2015",
+		"url" : "https://www.udacity.com/course/nd001"
+	}]
 };
 //Education Display Function
 education.display = function(){
@@ -144,12 +160,29 @@ education.display = function(){
 		var formattedName = HTMLschoolName.replace("%data%",education.schools[schools].name);
 		var formattedDegree = HTMLschoolDegree.replace("%data%",education.schools[schools].degree);
 		var formattedLocation = HTMLschoolLocation.replace("%data%",education.schools[schools].location);
-		var formattedMajor = HTMLschoolMajor.replace("%data%",education.schools[schools].major);
+		var formattedMajor = HTMLschoolMajor.replace("%data%",education.schools[schools].majors);
+		var formattedDate = HTMLschoolDates.replace("%data%",education.schools[schools].date);
+		var formattedURL = HTMLonlineURL.replace("%data%",education.schools[schools].url);
+		
 		$(".education-entry:last").append(formattedName);
 		$(".education-entry:last").append(formattedDegree);
+		$(".education-entry:last").append(formattedDate);
 		$(".education-entry:last").append(formattedLocation);
 		$(".education-entry:last").append(formattedMajor);
+		$(".education-entry:last").append(formattedURL);
+		
+		
 	}
+	$(".education-entry:last").append(HTMLonlineClasses);
+	for(eCourse in education.onlineCourses){
+		var formattedName = HTMLonlineTitle.replace("%data%",education.onlineCourses[eCourse].title) + HTMLonlineSchool.replace("%data%",education.onlineCourses[eCourse].school);
+		var formattedDate = HTMLonlineDates.replace("%data%",education.onlineCourses[eCourse].dates);
+		var formattedURL = HTMLonlineURL.replace("%data%",education.onlineCourses[eCourse].url);
+		$(".education-entry:last").append(formattedName);
+		$(".education-entry:last").append(formattedDate);
+		$(".education-entry:last").append(formattedURL);
+	}
+	$(".MenuBar").append('<li><img src="Images/schoolIcon.png"></img><a href="#education">Education</a></li>');
 }
 /* Other Relative Functions */
 function locationizer(work_obj)
@@ -180,12 +213,6 @@ function stdName(){
 }
 
 //Custom Functions
-function Scroll(destination) {
-	$('html, body').animate({
-        scrollTop: $(destination).offset().top
-    });
-}
-
 function InternationButton(){
 	var iName = inName() || function(){};
 	var stName = stdName() || function(){};
@@ -204,4 +231,8 @@ education.display();
 projects.display();
 
 //Add Map and Internationalize Button
-$("#mapDiv").append(googleMap);
+$("#mapDiv").append(googleMap);	
+$(".MenuBar").append('<li><img src="Images/locationIcon.png"></img><a href="#mapDiv">Location</a></li>');
+
+//Add the toggle international button
+$(".MenuBar").append('<li><a href="#" onclick="InternationButton();return false;">Toggle International</a></li>');

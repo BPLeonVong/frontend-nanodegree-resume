@@ -116,6 +116,11 @@ h2, h3, h4, h5 {
 	text-shadow:2px 2px #5B4B05;
 }
 
+#education h3{
+	color: #FFF1B0;
+	text-shadow:2px 2px #5B4B05;
+}
+
 #education .location-text{
 	float: right;
 	color: #D4C270;
@@ -125,7 +130,12 @@ h2, h3, h4, h5 {
 	color: #86731E;
 }
 
+
 #education .education-entry{
+	color: #FFF1B0;
+}
+
+#education .education-entry .date-text{
 	color: #FFF1B0;
 }
 
@@ -231,5 +241,11 @@ hr{
 @media only screen and (max-width: 1200px) {
   #menu {
     display: none;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  #letsConnect {
+    margin-top: 0;
   }
 }

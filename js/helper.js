@@ -58,8 +58,7 @@ var HTMLonlineURL = '<br><a href="#">%data%</a>';
 var internationalizeButton = '<button>Internationalize</button>';
 var googleMap = '<div id="map"></div>';
 
-//I would like to add the menu options dynamically but was having trouble doing so.
-//var MenuItem = '<li><img src=%dataImage%></img><a href="#" onclick="Scroll(%dataScroll%);return false;">%dataTitle%</a></li>';
+//var MenuItem = '<li><img src="%dataImage%"></img><a href="%dataLocation%">%dataTitle%</a></li>';
 
 /*
 The International Name challenge in Lesson 2 where you'll create a function that will need this helper code to run. Don't delete! It hooks up your code to the button you'll be appending.
@@ -88,6 +87,7 @@ function logClicks(x,y) {
 
 $(document).click(function(loc) {
   // your code goes here!
+  logClicks(loc.pageX,loc.pageY);
 });
 
 
